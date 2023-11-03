@@ -2,7 +2,7 @@ import streamlit as st
 
 padding = 20
 
-image_path = "/Users/nichdylan/Documents/Natural Language Processing/NLP fake news/DSC_0424-Edited.jpg"
+image_path = "DSC_0424-Edited.jpg"
 
 st.markdown(
     """
