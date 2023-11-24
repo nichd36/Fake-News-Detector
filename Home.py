@@ -39,11 +39,13 @@ def check_reality(news):
         tfidf_vectorizer_lr = joblib.load('tfidf_vectorizer.pkl')   
     
         input_features = tfidf_vectorizer.transform([news])
+        input_features_lr = tfidf_vectorizer_lr.transform([news])
+    
         prediction = model.predict(input_features)
-        prediction_lr = model_lr.predict(input_features)
+        prediction_lr = model_lr.predict(input_features_lr)
     
         probs = model.predict_proba(input_features)
-        probs_lr = model_lr.predict_proba(input_features)
+        probs_lr = model_lr.predict_proba(input_features_lr)
 
         probability_real = probs_lr[0][0]
         probability_fake = probs_lr[0][1]
