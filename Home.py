@@ -48,13 +48,11 @@ def check_reality(news):
 
         probability_real = probs_lr[0][0]
         probability_fake = probs_lr[0][1]
-
-        st.markdown("Results from model with SVM")
     
         if prediction[0] == 1:
-            st.write("SVM say the news is fake")
+            st.write("SVM predicted the news to be fake")
         else:
-            st.write("SVM say the news is real")
+            st.write("SVM predicted the news to be real")
             
         if prediction_lr[0] == 1:
                 pred = round(probability_fake*100)
