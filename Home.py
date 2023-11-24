@@ -53,11 +53,12 @@ def check_reality(news):
             st.write("SVM predicted the news to be fake")
         else:
             st.write("SVM predicted the news to be real")
-            
+
+
+        st.subheader("LR model prediction")
         if prediction_lr[0] == 1:
                 pred = round(probability_fake*100)
                 if pred < 71:
-                        st.write("Model LR")
                         st.warning("Proceed with caution, as the certainty is low ⚠️")
                         st.markdown(
                         """
@@ -69,7 +70,6 @@ def check_reality(news):
                         unsafe_allow_html=True,
                         )
                 else:
-                        st.write("Model LR")
                         st.markdown(
                         """
                         <style>
