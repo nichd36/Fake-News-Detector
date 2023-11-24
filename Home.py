@@ -147,7 +147,7 @@ with col3:
                         news_segments = text_input.split("//next news//")
                         counter = 1
                         for segment in news_segments:
-                                st.write("News " + str(counter) + ":")
+                                st.subheader("News " + str(counter) + ":")
                                 counter += 1
 
                                 count = len(segment)
