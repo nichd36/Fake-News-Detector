@@ -30,9 +30,9 @@ def stemming(content):
     return stemmed_content
 
 def check_reality(news):
-        model = joblib.load('model.pkl')
+        model = joblib.load('model_lemmatization_svm_linear.pkl')
         news = stemming(news)
-        tfidf_vectorizer = joblib.load('tfidf_vectorizer.pkl')                                 
+        tfidf_vectorizer = joblib.load('tfidf_vectorizer_svm_lemma_linear.pkl')                                 
         input_features = tfidf_vectorizer.transform([news])
         prediction = model.predict(input_features)
         probs = model.predict_proba(input_features)
