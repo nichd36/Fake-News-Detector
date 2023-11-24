@@ -43,16 +43,23 @@ def check_reality(news):
     
         prediction = model.predict(input_features)
         prediction_lr = model_lr.predict(input_features_lr)
-    
+
+        probs = model.predict_proba(input_features)
         probs_lr = model_lr.predict_proba(input_features_lr)
 
         probability_real = probs_lr[0][0]
         probability_fake = probs_lr[0][1]
-    
+
+        probability_real_SVM = probs[0][0]
+        probability_fake_SVM = probs[0][1]
+
+        st.subheader("SVM model prediction")
         if prediction[0] == 1:
-            st.write("SVM predicted the news to be fake")
+            pred = round(probability_fake_SVM*100)
+            st.write("The news is predicted to be " + str(pred) + "% fake 😬")
         else:
-            st.write("SVM predicted the news to be real")
+            pred = round(probability_real_SVM*100)
+            st.write("The news is predicted to be " + str(pred) + "% real 🥰")
 
 
         st.subheader("LR model prediction")
