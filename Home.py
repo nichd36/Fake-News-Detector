@@ -44,7 +44,6 @@ def check_reality(news):
         prediction = model.predict(input_features)
         prediction_lr = model_lr.predict(input_features_lr)
     
-        probs = model.predict_proba(input_features)
         probs_lr = model_lr.predict_proba(input_features_lr)
 
         probability_real = probs_lr[0][0]
