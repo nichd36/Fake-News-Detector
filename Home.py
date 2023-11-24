@@ -56,9 +56,11 @@ def check_reality(news):
         st.subheader("SVM model prediction")
         if prediction[0] == 1:
             pred = round(probability_fake_SVM*100)
+            st.progress(pred / 100)
             st.write("The news is predicted to be " + str(pred) + "% fake 😬")
         else:
             pred = round(probability_real_SVM*100)
+            st.progress(pred / 100)
             st.write("The news is predicted to be " + str(pred) + "% real 🥰")
 
 
