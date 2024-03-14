@@ -1,5 +1,7 @@
 # Fake News Detector
 
+Deployment at: https://fake-news-detector-nicholas.streamlit.app/
+
 ## Overview
 Fake News Detector is a Natural Language Processing (NLP) project aimed at distinguishing between fake and real news articles. The project involves web scraping datasets from various news websites to collect data of both fake and real news articles. Using techniques such as lemmatization and stemming, in combination with scikit-learn's Logistic Regression (LR) and Support Vector Machine (SVM) algorithms, the project aims to develop an optimized model for detecting fake news articles.
 
